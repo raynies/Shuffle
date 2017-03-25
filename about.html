@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="GENERATOR" content="JustSystems Homepage Builder Version 17.0.11.0 for Windows">
+<title>Raidelk/About</title>
+<link rel="stylesheet" href="hpbparts.css" type="text/css" id="hpbparts">
+<link rel="stylesheet" href="container_10Aa_2c_top.css" type="text/css" id="hpbcontainer">
+<link rel="stylesheet" href="main_10Aa_2c.css" type="text/css" id="hpbmain">
+<link rel="stylesheet" href="user.css" type="text/css" id="hpbuser">
+<style type="text/css">
+<!--
+
+#dhtmltooltip{
+	position: absolute;
+width: 150px;
+border: 2px solid black;
+padding: 4px;
+color: black;
+visibility: hidden;
+z-index: 100;
+
+}-->
+</style>
+<link rel="shortcut icon" href="favicon.ico">
+</head>
+<body id="hpb-template-10-01a-01" class="hpb-layoutset-02">
+<div id="dhtmltooltip"></div>
+
+<script type="text/javascript">
+
+/***********************************************
+* Cool DHTML tooltip script- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* Please keep this notice intact
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+var offsetxpoint=-60 //Customize x offset of tooltip
+var offsetypoint=20 //Customize y offset of tooltip
+var ie=document.all
+var ns6=document.getElementById && !document.all
+var enabletip=false
+if (ie||ns6)
+var tipobj=document.all? document.all["dhtmltooltip"] : document.getElementById? document.getElementById("dhtmltooltip") : ""
+document.body.appendChild(tipobj)
+
+function ietruebody(){
+return (document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body
+}
+
+function ddrivetip(thetext, thecolor, thewidth){
+if (ns6||ie){
+if (typeof thewidth!="undefined") tipobj.style.width=thewidth+"px"
+if (typeof thecolor!="undefined" && thecolor!="") tipobj.style.backgroundColor=thecolor
+tipobj.innerHTML=thetext
+enabletip=true
+return false
+}
+}
+
+function positiontip(e){
+if (enabletip){
+var curX=(ns6)?e.pageX : event.clientX+ietruebody().scrollLeft;
+var curY=(ns6)?e.pageY : event.clientY+ietruebody().scrollTop;
+//Find out how close the mouse is to the corner of the window
+var rightedge=ie&&!window.opera? ietruebody().clientWidth-event.clientX-offsetxpoint : window.innerWidth-e.clientX-offsetxpoint-20
+var bottomedge=ie&&!window.opera? ietruebody().clientHeight-event.clientY-offsetypoint : window.innerHeight-e.clientY-offsetypoint-20
+
+var leftedge=(offsetxpoint<0)? offsetxpoint*(-1) : -1000
+
+//if the horizontal distance isn't enough to accomodate the width of the context menu
+if (rightedge<tipobj.offsetWidth)
+//move the horizontal position of the menu to the left by it's width
+tipobj.style.left=ie? ietruebody().scrollLeft+event.clientX-tipobj.offsetWidth+"px" : window.pageXOffset+e.clientX-tipobj.offsetWidth+"px"
+else if (curX<leftedge)
+tipobj.style.left="5px"
+else
+//position the horizontal position of the menu where the mouse is positioned
+tipobj.style.left=curX+offsetxpoint+"px"
+
+//same concept with the vertical position
+if (bottomedge<tipobj.offsetHeight)
+tipobj.style.top=ie? ietruebody().scrollTop+event.clientY-tipobj.offsetHeight-offsetypoint+"px" : window.pageYOffset+e.clientY-tipobj.offsetHeight-offsetypoint+"px"
+else
+tipobj.style.top=curY+offsetypoint+"px"
+tipobj.style.visibility="visible"
+}
+}
+
+function hideddrivetip(){
+if (ns6||ie){
+enabletip=false
+tipobj.style.visibility="hidden"
+tipobj.style.left="-1000px"
+tipobj.style.backgroundColor=''
+tipobj.style.width=''
+}
+}
+
+document.onmousemove=positiontip
+
+</script>
+<div id="top">
+<div style="position: relative; top: 5px;">ふわふわとした何か</div>
+</div>
+<div id="hpb-container">
+  <div id="hpb-inner">
+    <div id="hpb-wrapper">
+      <div id="hpb-main">
+        <div id="about1">
+          <div id="subject">
+            サイト概要
+          </div>
+          <div id="maintext">
+            　<a href="index.html"onMouseover="ddrivetip('001.本サイト<br>Raidelkのこと。詳細は本項で説明。','#D3D3D3', 220)"; onMouseout="hideddrivetip()">本サイト</a>
+            は<a href="index.html"onMouseover="ddrivetip('002.イトマ(いとま)<br>本サイト管理人。詳細は下項で説明。','#D3D3D3', 220)"; onMouseout="hideddrivetip()">イトマ(いとま)</a> が個人で運営・不定期更新しているサイトです。メインの創作物は音楽となりますが、絵や開発したアプリケーションなどもサイト上で公開する場合があります。また、創作物の内容などに関するお問い合わせはご遠慮下さい。
+          <br>
+          　また、本サイトは一部2000年代中期～後期に流行した個人ホームページの形式に則っています。すなわち、当時のHTML覚えたての若者たちが多用したような(？)ギミックもいくつか存在しています。その一つが本文章はじめの「本サイト」「イトマ(いとま)」に見られるキーワード解説です。キーワード解説はそのページでその単語が初出である場合にのみ出現しますが、使用ブラウザによっては使用できない可能性があります。ご了承ください。</div>
+        </div>
+        <div id="box">
+         <div id="about2">
+           <div id="subject">
+             イトマの紹介
+           </div>
+          <div id="maintext">Raidelkの管理人をしているDTMer。作曲は2008年にスタート。プログラミングをしたり、科学史やサイエンス・フィクションにまつわる書籍を読むのも好き。2000年代の個人HP全盛期を懐かしく思っている。極度の運動音痴。申し訳程度の理系。<br>
+            <br>
+              favorite composer：桑田佳祐、谷山浩子、Revo、ARM、崎元仁<br>
+            favorite writer：J.P.Hogan、栗本薫、F.Schatzing<br>
+            other : 小林賢太郎
+            <br><br>
+            <div id="contact">
+            <b>連絡先</b><br>
+            Twitter : <a href="https://twitter.com/itomaRR" style="text-decoration: none;">@itomaRR</a><br>
+            送信フォーム：<font style="font-size: 70%;">(ご感想など頂ければ幸いです。)</font><br>
+       <form action="mail.php" method="post">
+        <dl>
+        <dt>名前</dt>
+        <dd><input name="name" id="name" type="text" style="width:320px"/></dd>
+        <dt>e-mail</dt>
+        <dd><input name="mail" id="mail" type="text" maxlength="200" style="width:320px"/></dd>
+        <dt>件名</dt>
+        <dd><input name="sub" id="sub" type="text" maxlength="200" style="width:320px"/></dd>
+        <dt>内容</dt>
+        <dd><textarea name="naiyou" id="naiyou" size="50" style="width:320px;height:200px;resize: vertical;"></textarea></dd>
+        </dl>
+        <input type="submit" value="送信する" />
+       </form>
+            </div>
+          </div>
+         </div>
+        </div>
+      </div>
+    </div>
+    <div id="hpb-nav">
+      <ul>
+        <li><a href="index.html"><span onmouseover="document.all.item('menu1').style.visibility='visible'" onmouseout="document.all.item('menu1').style.visibility='hidden'" class="ja">Top</span></a>
+        <li><a href="about.html"><span onmouseover="document.all.item('menu2').style.visibility='visible'" onmouseout="document.all.item('menu2').style.visibility='hidden'" class="ja">About</span></a>
+        <li><a href="laboratory.html"><span onmouseover="document.all.item('menu3').style.visibility='visible'" onmouseout="document.all.item('menu3').style.visibility='hidden'" class="ja">Laboratory</span></a>
+        <li><a href="gallery.html"><span onmouseover="document.all.item('menu4').style.visibility='visible'" onmouseout="document.all.item('menu4').style.visibility='hidden'" class="ja">Gallery</span></a>
+        <li><a href="blog.html"><span onmouseover="document.all.item('menu5').style.visibility='visible'" onmouseout="document.all.item('menu5').style.visibility='hidden'" class="ja">Blog</span></a>
+      
+      </ul>
+      <div id="explain">
+   <div id="menu1" style="visibility:hidden;position: absolute; bottom: 2px;">　トップページに飛びます。</div>
+   <div id="menu2" style="visibility:hidden;position: absolute; bottom: 2px;">　このサイトおよび管理人の紹介などを公開しています。</div>
+   <div id="menu3" style="visibility:hidden;position: absolute; bottom: 2px;">　実験的に作った音楽系の創作、またはその他の創作などを公開しています。</div>
+   <div id="menu4" style="visibility:hidden;position: absolute; bottom: 2px;">　制作した絵や画像を公開しています。</div>
+   <div id="menu5" style="visibility:hidden;position: absolute; bottom: 2px;">　その他の活動などを紹介している管理人のブログに飛びます。</div>
+   </div>
+  </div>
+  </div>
+</div>
+<div id="footer">Copyright c 2016 Raidelk All Rights Reserved.</div>
+</body>
+</html>
