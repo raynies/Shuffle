@@ -4,8 +4,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=800px,initial-scale=maximum-scale,user-scalable=no">
 </head>
-<body style="width :800px;margin-right: auto;margin-left : auto;">
-<div align="center">
+<body style="width :800px;margin-right: auto;margin-left : auto;background-image: url('bg_tile.jpg')">
+<div align="center" style="width :650px;padding-left:30;padding-right:30;padding-top:80;padding-bottom:30;background-color: #ACD6BD;margin-right: auto;margin-left : auto;">
 <?php 
 session_start();
 header("Content-type: text/html; charset=utf-8");
@@ -32,17 +32,17 @@ if ($_SERVER['REQUEST_METHOD']==='POST'){
 		$err = true;
 		echo "<font color='red'>本文が長すぎます</font><br>";
 	}
-	if(mb_strlen($title)>20){
+	if(mb_strlen($title)>30){
 		$err = true;
 		echo "<font color='red'>タイトルが長すぎます</font><br>";
 	}
 	if(mb_strlen($content)==0){
 		$err = true;
-		echo "<font color='red'>本文のNASA</font><br>";
+		echo "<font color='red'>本文がありません</font><br>";
 	}
 	if(mb_strlen($title)==0){
 		$err = true;
-		echo "<font color='red'>タイトルのNASA</font><br>";
+		echo "<font color='red'>タイトルがありません</font><br>";
 	}
 	//生成
 	if($err === false){
@@ -51,24 +51,23 @@ if ($_SERVER['REQUEST_METHOD']==='POST'){
 		echo '<br>部屋は<a href="room/index.php?id='.$id.'" TARGET="_blank">こちら</a>';
 		//一覧への書き込み
 		$links = file_get_contents ("links.txt" ,"r+");
-		$current = $links.'<br><a href="room/index.php?id='.$id.'">'.$title.'</a>';
+		$current = $links.'<li><a href="room/index.php?id='.$id.'">'.$title.'</a></li>';
 		file_put_contents("links.txt", $current);
-		//csvへの書き込み
-		$ary = array($title,$content,$type,0,$_SESSION['screen_name']);
-		$file = fopen("room/".$id.".csv", "w");
-		fputcsv($file, $ary);
-		fclose($file);
+		//datへの書き込み
+		$currentchat=array("部屋が生成されました",date('Y/m/d H:i:s'));
+		$ary = array($title,$content,$type,0,array($_SESSION['screen_name'],"","",""),999=>array("chatroom"=>array(0=>$currentchat)));
+		file_put_contents("room/".$id.".dat", serialize($ary));
 	}
 }
 ?>
 <!-- フォームここから -->
 <?php if($fin){echo "<div style='display:none;height:0;'>";} ?>
 <form action="" method="POST">
-	部屋の名前(20字以内)：<br><input type="text" name="title" value="<?php echo htmlspecialchars($title,ENT_QUOTES,'UTF-8'); ?>"><br>
+	部屋の名前(30字以内)：<br><input type="text" style="font-size: 16;" name="title" value="<?php echo htmlspecialchars($title,ENT_QUOTES,'UTF-8'); ?>"><br>
 	主催の名前：<br><b><?php echo $_SESSION['name']; ?></b><br>
 	主催のID：<br><?php echo "<b>".$_SESSION['screen_name']."</b>"; ?><br>
 	説明文(1000字以内)：<br>
-	<textarea rows="30" cols="30" name="content"><?php echo str_replace('&lt;br /&gt;', '', htmlspecialchars($content ,ENT_QUOTES,"UTF-8") ); ?></textarea><br>
+	<textarea style="width:90%;height:800;" name="content" style="font-size: 16;"><?php echo str_replace('&lt;br /&gt;', '', htmlspecialchars($content ,ENT_QUOTES,"UTF-8") ); ?></textarea><br>
 	創作の種類：<br>
 	<input name="type" type="radio" value="word" checked="checked">文章
     <input name="type" type="radio" value="paint">絵<br>
