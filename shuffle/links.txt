@@ -1,1 +1,1 @@
-﻿<li><a href="room/index.php?id=20179302232074">てすてすやまとですです。</a></li>
+﻿<li><a href="room/index.php?id=20179302232074">てすてすやまとですです。(終了済)</a></li><li><a href="room/index.php?id=20179716032364">第1.1回かんゔぁら主催(終了済)</a></li><li><a href="room/index.php?id=20179101809060">絵柄シャッフル部屋</a></li>

@@ -4,10 +4,10 @@
 <?php
 session_start();
 if($_GET['id']){
-$id = $_GET['id'];
-$_SESSION['room_id'] = $id;
-header("HTTP/1.1 301 Moved Permanently");
-header("Location: ../room");
+	$id = $_GET['id'];
+	$_SESSION['room_id'] = $id;
+	header("HTTP/1.1 301 Moved Permanently");
+	header("Location: ../room");
 }else{
 	$id = $_SESSION['room_id'];
 }
@@ -267,13 +267,13 @@ require_once "phase.php";
 if(isset($_POST['ahead'])){
 	ahead();
 	header("HTTP/1.1 301 Moved Permanently");
-	header("Location: ../room");
+	header("Location: ../");
 	exit();
 }
 if(isset($_POST['behind'])){
 	behind();
 	header("HTTP/1.1 301 Moved Permanently");
-	header("Location: ../room");
+	header("Location: ../");
 	exit();
 }
 echo '</div>';

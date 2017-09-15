@@ -308,15 +308,6 @@ if($ary[3] > 0){
 }
 //フェーズが1以上なら箱を作る(終了)
 //チャットルーム
-echo '<br><div style="width:90%;text-align:left;background-color: #EEFFFF;margin:auto;padding:20px;border:double 10px #003B34;">';
-echo '
-<b>チャット</b>(30件表示)
-<form action="" method="POST">
-	<input type="text" style="font-size: 16;width:80%;" name="chat">
-	<input type="submit">
-</form>
-';
-require("chatroom.php");
-echo '</div>';
+echo '<br><iframe src="chatroom.php?id='.$id.'" name="sample" width=100% height="600" frameborder="0"></iframe>';
 ?>
 </center>
